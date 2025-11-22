@@ -265,56 +265,85 @@ body {
   }
 }
 
+/* Responsive: mobile fixes */
 @media (max-width: 520px) {
+
+  /* container adjustments already present */
+  .container {
+    padding: 20px;
+    border: 5px solid cyan;
+  }
+
+  .main-quote {
+    font-size: 32px;
+  }
+
+  /* make inner card full-width but constrained, with inner padding */
+  .innercard {
+    font-size: 18px;
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin: 18px auto;     /* center horizontally */
+    box-sizing: border-box;
+  }
+
+  /* icon grid becomes 2 columns and tighter */
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .icon-card {
+    max-width: 160px;
+    height: 120px;
+    font-size: 14px;
+  }
+
+  .icon-card img,
+  .icon-img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .icon-label {
+    font-size: 12px;
+  }
+
+  /* profile box and image sizes */
   .pfp {
-    width: 180px;
-    height: 250px;
-    min-width: 180px;
+    width: 120px;
+    height: 120px;
+    min-width: 120px;
   }
 
   .profile-text {
     font-size: 16px;
   }
+
+  .sih-text {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .connect-btn {
+    font-size: 16px;
+    padding: 12px 40px;
+  }
+
+  /* ********* THE FIXES FOR CTA ********* */
+  .cta-line {
+    display: block;
+    text-align: center;     /* center text */
+    padding: 10px 12px;     /* breathing room */
+    margin: 0 auto;         /* ensure centered */
+    width: calc(100% - 24px); /* don't touch edges */
+    box-sizing: border-box;
+    word-break: break-word;
+  }
 }
 
-.sih-text {
-  font-family: "Inter", sans-serif;
-  font-size: 18px;
-  line-height: 1.8;
-  color: #cbd5e1;
-  margin: 40px auto;
-  max-width: 800px;
-  padding: 30px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
-  border: 2px solid rgba(0, 255, 176, 0.3);
-  border-radius: 20px;
-}
-
-.connect-btn {
-  font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  padding: 15px 50px;
-  background: #00eaff;
-  color: #001428;
-  border: 3px solid cyan;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 0 30px rgba(0, 234, 255, 0.6);
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 40px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.connect-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(0, 234, 255, 0.8);
-  background: #00d4e6;
-  color: #000c1a;
-}
 
 /* Responsive Design */
 @media (max-width: 980px) {
@@ -341,80 +370,9 @@ body {
   }
 }
 
-@media (max-width: 520px) {
-  .container {
-    padding: 20px;
-    border: 5px solid cyan;
-  }
-
-  .main-quote {
-    font-size: 32px;
-  }
-
-  .innercard {
-    font-size: 18px;
-    width: 95%;
-  }
-
-  .icon-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 12px;
-    gap: 12px;
-  }
-
-  .icon-card {
-    max-width: 160px;
-    height: 120px;
-    font-size: 14px;
-  }
-
-  .icon-card img,
-  .icon-img {
-    width: 56px;
-    height: 56px;
-  }
-
-  .icon-label {
-    font-size: 12px;
-  }
-
-  .sih-text {
-    font-size: 16px;
-    padding: 20px;
-  }
-
-  .connect-btn {
-    font-size: 16px;
-    padding: 12px 40px;
-  }
-
-  @media (max-width: 520px) {
-  .container {
-    padding: 20px;
-    border: 5px solid cyan;
-  }
-
-  .main-quote {
-    font-size: 32px;
-  }
-
-  .innercard {
-    font-size: 18px;
-    width: 95%;
-    padding: 15px;  /* Add this */
-  }
-
-  .cta-line {
-    text-align: center;  /* Add this */
-    padding: 0 5px;      /* Add this */
-  }
-  
-  /* rest of your existing mobile styles... */
-}
-}
-
 a {
   color: inherit;
   text-decoration: none;
 
 }
+

@@ -38,7 +38,8 @@
                     </svg>
                     <span class="icon-label">LinkedIn</span>
                 </a>
-                <a class="icon-card" href="https://mail.google.com/mail/?view=cm&fs=1&to=nilanchaljena2702@gmail.com" target="_blank" rel="noopener"><img class="icon-img" src="https://cdn.simpleicons.org/gmail/white" alt="Gmail" />
+                <a id="gmail-link" class="icon-card" href="mailto:nilanchaljena2702@gmail.com" target="_blank" rel="noopener">
+                    <img class="icon-img" src="https://cdn.simpleicons.org/gmail/white" alt="Gmail" />
                     <span class="icon-label">Gmail</span>
                 </a>
                 <a class="icon-card" href="https://twitter.com/@Nilanchal0107" target="_blank" rel="noopener">
@@ -112,6 +113,31 @@
             }
         });
     </script>
+    <script>
+        (function() {
+          var gmailAnchor = document.getElementById('gmail-link');
+          if (!gmailAnchor) return;
+          var email = 'nilanchaljena2702@gmail.com';
+          var gmailWebURL = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(email);
+        
+          function isMobile(){
+            return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+          }
+      
+          gmailAnchor.addEventListener('click', function(e) {
+            // On desktop, allow default mailto behavior
+            if (!isMobile()) return;
+        
+            // On mobile, try mailto first, then fallback to Gmail web compose
+            e.preventDefault();
+            window.location.href = 'mailto:' + email;
+        
+            setTimeout(function() {
+              // open Gmail web compose in a new tab if the native composer didn't open
+              window.open(gmailWebURL, '_blank', 'noopener');
+            }, 800);
+          });
+        })();
+    </script>
 </body>
-
 </html>

@@ -387,9 +387,34 @@ body {
     font-size: 16px;
     padding: 12px 40px;
   }
+
+  @media (max-width: 520px) {
+  .container {
+    padding: 20px;
+    border: 5px solid cyan;
+  }
+
+  .main-quote {
+    font-size: 32px;
+  }
+
+  .innercard {
+    font-size: 18px;
+    width: 95%;
+    padding: 15px;  /* Add this */
+  }
+
+  .cta-line {
+    text-align: center;  /* Add this */
+    padding: 0 5px;      /* Add this */
+  }
+  
+  /* rest of your existing mobile styles... */
+}
 }
 
 a {
   color: inherit;
   text-decoration: none;
+
 }

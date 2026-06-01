@@ -1,0 +1,43 @@
+=== CS50x Homepage - specification.txt ===
+Author: Nilanchal Jena
+
+--- 10 Distinct HTML Tags Used ---
+1.  <h1>       - Main quote heading "Human by Nature, Developer by Choice."
+2.  <p>        - Profile text (name, role, batch) and CTA line inside innercard
+3.  <a>        - Social media icon links (GitHub, LinkedIn, Gmail, Twitter, Discord, Instagram) and Connect button
+4.  <img>      - Profile photo and social media icon images
+5.  <div>      - Layout containers: .container, .outercard, .innercard, .icon-grid, .icon-card, .profile-box, .pfp, .modal
+6.  <span>     - Icon labels beneath each social media icon (.icon-label)
+7.  <svg>      - Inline SVG for the LinkedIn icon
+8.  <link>     - Linking Google Fonts and styles.css in the <head>
+9.  <meta>     - charset, viewport, and author metadata in the <head>
+10. <script>   - JavaScript blocks for image modal and Gmail mobile handler
+
+--- 5 CSS Selectors Used ---
+1.  body                - Sets background gradient, flex centering, min-height, color, and text-shadow
+2.  .container          - Full-width border, border-radius, padding, and min-height layout wrapper
+3.  .icon-card          - Styles each social media card with background, border, flexbox, and hover transition
+4.  .icon-card:hover    - Hover state: lifts card with translateY and glows border
+5.  .pfp                - Profile picture container with fixed dimensions, overflow hidden, and cursor pointer
+6.  @media (max-width: 520px) - Responsive breakpoint adjusting font sizes, grid columns, card sizes, and profile layout for mobile
+
+--- 5 CSS Properties Used ---
+1.  background          - Used for gradient backgrounds on body, .outercard, .sih-text, and .profile-box
+2.  border-radius       - Rounds corners on .container, .outercard, .innercard, .icon-card, .pfp, .connect-btn
+3.  box-shadow          - Glow effects on .icon-card, .pfp, .connect-btn, and .modal-content
+4.  transition          - Smooth animations on .icon-card, .pfp, and .connect-btn for hover effects
+5.  font-family         - Montserrat for headings/quote, Inter for body text, applied across multiple elements
+6.  grid-template-columns - CSS Grid layout for the 3x2 social media icon grid (.icon-grid)
+
+--- JavaScript Features Used ---
+1. Image Modal: Clicking the profile picture opens a full-screen modal overlay displaying a larger version
+   of the profile image. The modal can be closed by clicking the X button, clicking outside the image,
+   or pressing the Escape key.
+
+2. Gmail Mobile Handler: On mobile devices, clicking the Gmail icon first attempts to open the native
+   mail app via mailto:, then falls back to opening Gmail web compose in a new tab after 800ms,
+   ensuring the email link works reliably across all devices.
+
+--- Bootstrap Integration ---
+Bootstrap 4.5.3 is integrated via CDN in the <head> of each page. Bootstrap's utility classes are used
+for responsive spacing, layout structure, and the navigation bar across all pages.

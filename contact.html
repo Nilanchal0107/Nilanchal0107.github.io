@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Nilanchal Jena">
+    <title>Contact - Nilanchal Jena</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+        <a class="navbar-brand brand-name" href="index.html">NJ</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                <li class="nav-item active"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <div class="page-hero animate-in">
+            <h1>Contact</h1>
+            <p>Want to collaborate, team up for a hackathon, or just say hi? I'd love to hear from you.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="section-card animate-in" style="animation-delay: 0.15s; max-width: 700px;">
+            <h2>Send a Message</h2>
+            <div class="contact-form">
+                <label for="nameInput">Your Name</label>
+                <input type="text" id="nameInput" placeholder="e.g. Aryan Shah" />
+
+                <label for="emailInput">Your Email</label>
+                <input type="text" id="emailInput" placeholder="e.g. aryan@example.com" />
+
+                <label for="msgInput">Message</label>
+                <textarea id="msgInput" placeholder="Tell me what's on your mind..."></textarea>
+
+                <button class="connect-btn" style="margin-top: 20px; font-size: 0.88rem; padding: 12px 40px;" onclick="handleSubmit()">
+                    Send Message
+                </button>
+
+                <p id="form-feedback"></p>
+            </div>
+        </div>
+
+        <!-- Direct Links -->
+        <div class="section-card animate-in" style="animation-delay: 0.3s; max-width: 700px;">
+            <h2>Or Reach Me Directly</h2>
+            <ul style="list-style: none; padding: 0; margin-top: 8px;">
+                <li style="margin: 10px 0;">
+                    📧 &nbsp;<a href="mailto:nilanchaljena2702@gmail.com" style="color: var(--cyan);">nilanchaljena2702@gmail.com</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    💼 &nbsp;<a href="https://www.linkedin.com/in/nilanchal-jena-841936363" target="_blank" rel="noopener" style="color: var(--cyan);">LinkedIn</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    🐙 &nbsp;<a href="https://github.com/Nilanchal0107" target="_blank" rel="noopener" style="color: var(--cyan);">GitHub</a>
+                </li>
+                <li style="margin: 10px 0;">
+                    🐦 &nbsp;<a href="https://twitter.com/@Nilanchal0107" target="_blank" rel="noopener" style="color: var(--cyan);">Twitter / X</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>© 2025 Nilanchal Jena &nbsp;·&nbsp;
+            <a href="index.html">Home</a> &nbsp;·&nbsp;
+            <a href="about.html">About</a> &nbsp;·&nbsp;
+            <a href="projects.html">Projects</a> &nbsp;·&nbsp;
+            <a href="contact.html">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        function handleSubmit() {
+            const name    = document.getElementById('nameInput').value.trim();
+            const email   = document.getElementById('emailInput').value.trim();
+            const message = document.getElementById('msgInput').value.trim();
+            const feedback = document.getElementById('form-feedback');
+
+            if (!name || !email || !message) {
+                feedback.textContent = 'Please fill in all fields before sending.';
+                feedback.className = 'error';
+                return;
+            }
+
+            if (!email.includes('@') || !email.includes('.')) {
+                feedback.textContent = 'Please enter a valid email address.';
+                feedback.className = 'error';
+                return;
+            }
+
+            // Simulate successful send
+            feedback.textContent = '✓ Message sent! I\'ll get back to you soon.';
+            feedback.className = 'success';
+
+            document.getElementById('nameInput').value = '';
+            document.getElementById('emailInput').value = '';
+            document.getElementById('msgInput').value = '';
+        }
+    </script>
+
+</body>
+</html>
